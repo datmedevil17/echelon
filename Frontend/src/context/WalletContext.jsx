@@ -1,10 +1,12 @@
 import React, { createContext, useState, useEffect } from 'react';
 import { ethers } from 'ethers';
 import abi from '../abis/MarketPlace.json';
+import {useNavigate} from 'react-router'
 
 export const WalletContext = createContext();
 
 export const WalletProvider = ({ children }) => {
+    const navigate = useNavigate()
   const [account, setAccount] = useState(null);
   const [state, setState] = useState({
     provider: null,
@@ -47,6 +49,7 @@ export const WalletProvider = ({ children }) => {
       setAccount(address);
 
       setState({ provider, signer, address, contract });
+    //   navigate('/home')
     } catch (error) {
       console.error('Error connecting to Metamask:', error);
     }
