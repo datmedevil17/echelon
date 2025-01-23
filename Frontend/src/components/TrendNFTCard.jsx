@@ -1,18 +1,14 @@
 import React from 'react';
 
 const Card = ({
-  chain_id = "N/A",
   closing_timestamp = "N/A",
   collection_name = "N/A",
-  contract_address = "N/A",
   deal_score = "N/A",
   estimated_eth_price = "N/A",
   listed_eth_price = "N/A",
   listing_timestamp = "N/A",
-  marketplace = "N/A",
   thumbnail_palette = "[]",
   thumbnail_url = "https://via.placeholder.com/300", // Default placeholder image
-  token_id = "N/A",
 }) => {
   // Parse thumbnail palette into an array
   let paletteColors;
@@ -23,28 +19,20 @@ const Card = ({
   }
 
   return (
-    <div className="max-w-sm mx-auto bg-white shadow-lg rounded-lg overflow-hidden border border-gray-200">
-      <img
-        src={thumbnail_url}
-        alt={collection_name}
-        className="w-full h-48 object-contain bg-gray-100"
-      />
-      <div className="p-5">
+    <div className="flex max-w-md mx-auto bg-white shadow-lg rounded-lg overflow-hidden border border-gray-200">
+      <div className="w-1/3 bg-gray-100">
+        <img
+          src={thumbnail_url}
+          alt={collection_name}
+          className="w-full h-full object-contain"
+        />
+      </div>
+      <div className="w-2/3 p-5">
         <h2 className="text-lg font-bold text-gray-800 truncate">
           {collection_name}
         </h2>
-        <p className="text-sm text-gray-500">Token ID: {token_id}</p>
 
         <div className="mt-3">
-          <p className="text-sm text-gray-600">
-            <span className="font-semibold">Chain ID:</span> {chain_id}
-          </p>
-          <p className="text-sm text-gray-600">
-            <span className="font-semibold">Contract Address:</span> {contract_address}
-          </p>
-          <p className="text-sm text-gray-600">
-            <span className="font-semibold">Marketplace:</span> {marketplace}
-          </p>
           <p className="text-sm text-gray-600">
             <span className="font-semibold">Deal Score:</span> {typeof deal_score === "number" ? deal_score.toFixed(2) : deal_score}
           </p>
