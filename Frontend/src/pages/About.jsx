@@ -1,11 +1,12 @@
 import React from 'react';
 import Navbar from './Navbar';
+import GraphComponent from '../components/TradersInsight';
 
 const About = () => {
     return (
         <>
         <Navbar/>
-            <div className='text-2xl'>About</div>
+        <GraphComponent/>
         </>
     );
 }
