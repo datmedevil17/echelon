@@ -7,6 +7,7 @@ import About from './pages/About';
 import Launchpad from './pages/Launchpad';
 import Home from './pages/Home';
 import MyBrand from './pages/MyBrand';
+import Insight from './pages/Insight';
 import Collectibles from './pages/Collectibles';
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/home" element={<Home/>} />
         <Route path="/myBrand" element={<MyBrand/>}></Route>
         <Route path="/collectibles" element={<Collectibles/>}></Route>
+        <Route path="/insight" element={<Insight/>}></Route>
 
       </Routes>
     </>

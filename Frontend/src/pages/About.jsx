@@ -6,8 +6,7 @@ import MarketplacesByBlockchain from '../components/MarketPlaceData';
 const About = () => {
     return (
         <>
-        <Navbar/>
-        <MarketplacesByBlockchain/>
+        
         </>
     );
 }
